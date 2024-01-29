@@ -1,17 +1,18 @@
 import React from "react";
 
-const WORD = "asad";
-const guessedLetters = [];
-const hent = "my name";
-export const Solution = () => {
+export const Solution = ({ lettersStatus, solution }) => {
   return (
     <div>
-      {WORD.split("").map((letter) =>
-        guessedLetters.includes(letter) ? ` ${letter} ` : ` _ `
-      )}
+      {solution.word
+        .split("")
+        .map((letter) =>
+          lettersStatus[letter.toUpperCase()]
+            ? ` ${letter.toLowerCase()} `
+            : ` _ `
+        )}
 
       <div className="">
-        <span>hint:</span> <span>{hent}</span>
+        <span>hint:</span> <span>{solution.hint}</span>
       </div>
     </div>
   );

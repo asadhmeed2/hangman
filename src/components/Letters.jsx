@@ -1,13 +1,16 @@
 import React from "react";
 import { Letter } from "./Letter";
 
-const letters = ["a"];
-
-export const Letters = () => {
+export const Letters = ({ letterStatus, onLetterClicked }) => {
   return (
-    <div>
-      {letters.map((letter, idx) => (
-        <Letter key={idx} letter={letter} />
+    <div className="letters">
+      {Object.entries(letterStatus).map(([letter, clicked], idx) => (
+        <Letter
+          key={idx}
+          letter={letter}
+          isClicked={clicked}
+          onLetterClicked={onLetterClicked}
+        />
       ))}
     </div>
   );
