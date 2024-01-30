@@ -25,3 +25,19 @@ body{
 .letterClicked{
   color: rgb(166, 166, 166);
 }
+
+.high-score{
+  color:green;
+}
+
+.med-score{
+  color:orange;
+}
+
+.low-score{
+  color:red;
+}
+
+.game-over-secret-word{
+  font-weight: bold;
+}
